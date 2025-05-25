@@ -29,6 +29,8 @@ USER nginx
 # because file has the port 80 which is system port(1-1024) which can be accessed with root user
 # since the user in docker file is not root user remove the file
 
+# For kubernetes change port 80 to 8080 in nginx.conf file
+
 
 # Download the code from https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
 
