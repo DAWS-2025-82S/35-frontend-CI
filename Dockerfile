@@ -21,6 +21,8 @@ RUN touch /var/run/nginx.pid && \
     chown -R nginx:nginx /var/run/nginx.pid /run/nginx.pid
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY code /usr/share/nginx/html/
+# To fix libxm2 vulnerability scanning 
+RUN apk upgrade
 USER nginx
 
 # Optimised Docker Image
@@ -41,3 +43,6 @@ USER nginx
 #  In Jenkins create CI pipeline for frontend EXPENSE-->FRONTEND-->frontend-ci
 
 #  	configure https://github.com/DAWS-2025-82S/35-frontend-CI.git
+
+# To fix libxm2 vulnerability scanning  add the below command 
+# RUN apk upgrade
